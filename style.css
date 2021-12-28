@@ -1,4 +1,31 @@
-.hide{
-    display: none;
+body{
+    background-color: blue;
    
 }
+
+#container{
+    height: 500px;
+    width: 500px;
+}
+
+
+.numeriRandom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 30px;
+    width: 300px;
+}
+#orologio{
+    background-color: rgba(29, 20, 85, 0.733);
+    border-radius: 20px;
+    height: 200px;
+    width: 600px;
+    font-size: 30px;
+    color: white;
+    margin: auto;
+}
+
+
+
