@@ -24,7 +24,6 @@ const elemento = document.getElementById("orologio");
 
 elemento.innerHTML = secondi;
 let orologio = setInterval(function(){
-    console.log("intervallo");
  //cuont dwon   
     secondi--;
     
@@ -51,8 +50,11 @@ function numeriUtente(){
         let numero = parseInt(prompt ('inserisci un numero'));
         numeri.push(numero);
         result=0;
+        numeriGiusti=[];
         for(let i = 0; i<array.length; i++){
             if (array.includes(numeri[i])){
+                numeriGiusti.push(numeri[i]);
+
                 result++;
             }   
         }
@@ -60,7 +62,7 @@ function numeriUtente(){
     console.log(numeri);
     console.log(result);
     finalResult = document.getElementById('result');
-    finalResult.innerHTML = 'hai idovinato' + ' '+'<br>' + result + ' ' +'<br>'+ 'numeri' ;  //resultato
+    finalResult.innerHTML = 'hai idovinato' + ' '+'<br>' + result + ' ' +'<br>'+ 'numeri'+'<br>'+ numeriGiusti ;  //resultato
     
 }
 
