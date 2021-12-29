@@ -14,10 +14,9 @@ for( let i=0; i<5; i++){
 }
 console.log(array)
 
-temp = document.createElement('div');
-temp.classList.add("numeriRandom");
-temp.innerHTML = array;
-document.getElementsByTagName('div')[0].appendChild(temp);
+RandomArray = document.getElementById('array');
+RandomArray.innerHTML = array;
+
 
 
 let secondi = 30;
@@ -30,10 +29,10 @@ let orologio = setInterval(function(){
     secondi--;
     
     if(secondi==0){
-        clearInterval(orologio, temp); 
-        temp.innerHTML = "ricorda i cinque numeri";
+        clearInterval(orologio, RandomArray); 
+        RandomArray.innerHTML = "ricorda i cinque numeri";
         elemento.innerHTML = "tempo è scaduto";
-        setTimeout(numeriUtente,1000)  
+        setTimeout(numeriUtente,100)  
     }
    
    
@@ -43,7 +42,7 @@ let orologio = setInterval(function(){
         
     }
 
-},1000);
+},100);
 
 function numeriUtente(){
     let numeri=[];
@@ -53,14 +52,17 @@ function numeriUtente(){
         numeri.push(numero);
         result=0;
         for(let i = 0; i<array.length; i++){
-            if (array[i]==numeri[i]){
+            if (array.includes(numeri[i])){
                 result++;
             }   
         }
     }      
     console.log(numeri);
     console.log(result);
-    document.writeln('hai idovinato'+result+'numeri');
+    RandomArray.classList.add("hide");
+    elemento.classList.add("hide");
+    finalResult = document.getElementById('result');
+    finalResult.innerHTML = 'hai idovinato' + ' '+'<br>' + result + ' ' +'<br>'+ 'numeri' ;  
     
 }
 
