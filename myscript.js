@@ -18,34 +18,34 @@ RandomArray = document.getElementById('array');
 RandomArray.innerHTML = array;
 
 
-
+//30 secondi
 let secondi = 30;
 const elemento = document.getElementById("orologio");
 
 elemento.innerHTML = secondi;
 let orologio = setInterval(function(){
     console.log("intervallo");
-    
+ //cuont dwon   
     secondi--;
     
-    if(secondi==0){
+    if(secondi==0){//quando tempo è scaduto
         clearInterval(orologio, RandomArray); 
         RandomArray.innerHTML = "ricorda i cinque numeri";
         elemento.innerHTML = "tempo è scaduto";
-        setTimeout(numeriUtente,100)  
+        setTimeout(numeriUtente,1000)  
     }
    
    
-    else{
+    else{//numeri da 30 fino 0
         elemento.innerHTML = secondi;
         
         
     }
 
-},100);
+},1000);
 
 function numeriUtente(){
-    let numeri=[];
+    let numeri=[];//array numeri-utente
     let result='';
         for(let i=0; i<5; i++){
         let numero = parseInt(prompt ('inserisci un numero'));
@@ -59,10 +59,8 @@ function numeriUtente(){
     }      
     console.log(numeri);
     console.log(result);
-    RandomArray.classList.add("hide");
-    elemento.classList.add("hide");
     finalResult = document.getElementById('result');
-    finalResult.innerHTML = 'hai idovinato' + ' '+'<br>' + result + ' ' +'<br>'+ 'numeri' ;  
+    finalResult.innerHTML = 'hai idovinato' + ' '+'<br>' + result + ' ' +'<br>'+ 'numeri' ;  //resultato
     
 }
 
